@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@1,800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="./social-media-icons.css">
+    <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+ <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <link rel="stylesheet" href="slides.css">
+ <script src="js/jquery.slides.min.js"></script>
+
+
+</head>
+
+
+<style>
+    .div1 {
+        border: 1px solid rgb(129, 113, 113);
+        background-color: #e4b4c4;
+        text-align: center;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 45px;
+        width: 98%;
+        height: 140px;
+        border-radius: 30px 0px 0px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+    }
+
+    .logo-container {
+        position: absolute;
+        top: 35px;
+        left: 15px;
+    }
+
+    .logo-container img {
+        height: 39px;
+        margin-top: 2px;
+        width: 35px;
+
+    }
+
+    .div2 {
+        border: 1px solid rgb(129, 113, 113);
+        background-color: #e4b4c4;
+        text-align: center;
+        height: 500px;
+        width: 19%;
+        float: left;
+    }
+
+    .div3 {
+        border: 1px solid rgb(129, 113, 113);
+        background-color: #e4b4c4;
+        text-align: center;
+        width: 79%;
+        height: 500px;
+        float: left;
+    }
+
+    .div4 {
+        border: 1px solid rgb(129, 113, 113);
+        background-color:#e4b4c4;
+        text-align: center;
+        width: 98%;
+        height: 170px;
+        margin-top: 500px;
+        border-radius: 0px 0px 30px 0px;
+
+    }
+
+    #home,
+    #Offer,
+    #news,
+    #Contacts,
+    #About {
+        border: 2px solid rgb(129, 113, 113);
+        margin: 2px;
+
+    }
+
+    #home,
+    #Offer,
+    #news,
+    #Contacts,
+    #About {
+        border-radius: 14px 0px 14px 0px;
+        margin: 2px;
+        padding: 2px;
+        background-color: rgb(226, 158, 181);
+    }
+
+    #home:hover,
+    #Offer:hover,
+    #news:hover,
+    #Contacts:hover,
+    #About:hover {
+        color: rgb(226, 158, 181);
+        background-color: rgb(37, 34, 37);
+    }
+
+    #Offer:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown {
+        position: absolute;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #77666d;
+        min-width: 39px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    
+
+    }
+
+    .dropdown-content a {
+        color: rgb(24, 17, 19);
+        padding: 2px 2px;
+        text-decoration: rgb(196, 58, 104);
+        display: block;
+       
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgb(224, 143, 165);
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+       
+    }
+
+
+
+
+    .logo-container img {
+        height: 100px;
+        width: 120px;
+        animation: moveLogo 3s linear infinite alternate;
+    }
+
+    @keyframes moveLogo {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(200px);
+        }
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    ::selection {
+        color: #fff;
+        background: #ff4c68;
+    }
+
+    .search-box {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        height: 36%;
+        width: 60px;
+        border-radius: 50%;
+        margin-top: 60px;
+        margin-right: 29px;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0);
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .search-box.active {
+        width: 350px;
+    }
+
+    .search-box input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 50px;
+        background: #fff;
+        outline: none;
+        padding: 0 60px 0 20px;
+        font-size: 18px;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .search-box input.active {
+        opacity: 1;
+    }
+
+    .search-box input::placeholder {
+        color: #a6a6a6;
+    }
+
+    .search-box .search-icon {
+        position: absolute;
+        right: 0px;
+        top: 59%;
+        transform: translateY(-50%);
+        height: 60px;
+        width: 60px;
+        background: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60px;
+        font-size: 22px;
+        color: #d38591;
+        cursor: pointer;
+        z-index: 1;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .search-box .search-icon.active {
+        right: 5px;
+        height: 50px;
+        line-height: 50px;
+        width: 50px;
+        font-size: 20px;
+        background: #ee8e9c;
+        color: #fff;
+        transform: translateY(-50%) rotate(360deg);
+        margin-top: 15px;
+    }
+
+    .search-box .cancel-icon {
+        position: absolute;
+        right: 20px;
+        top: 65%;
+        transform: translateY(-50%);
+        font-size: 32px;
+        color: #3b3535;
+        cursor: pointer;
+        transition: all 0.5s 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .search-box .cancel-icon.active {
+        right: -40px;
+        transform: translateY(-50%) rotate(360deg);
+    }
+
+    .search-box .search-data {
+        text-align: center;
+        padding-top: 7px;
+        color: #fff;
+        font-size: 18px;
+        word-wrap: break-word;
+    }
+
+    .search-box .search-data.active {
+        display: none;
+    }
+
+    .social-menu ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.social-menu ul li{
+    list-style: none;
+    margin: 0 15px;
+}
+
+.social-menu ul li .fab{
+    font-size: 30px;
+    line-height: 45px;
+    transition: .3s;
+    color: #0a0b0c;
+}
+
+.social-menu ul li .fab:hover{
+    color: #fff;
+}
+
+.social-menu ul li a{
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    transition: .6s;
+    box-shadow: 0 5px 4px rgba(0,0,0,.5);
+}
+
+.social-menu ul li a:hover{
+    transform: translate(0, -10%);
+}
+
+.social-menu ul li:nth-child(1) a:hover{
+    background-color: rgba(94, 84, 233, 0.829);
+}
+.social-menu ul li:nth-child(2) a:hover{
+    background-color: #8cc0df;
+}
+.social-menu ul li:nth-child(3) a:hover{
+    background-color: #d6387f;
+}
+.social-menu ul li:nth-child(4) a:hover{
+    background-color: #2d3669;
+}
+.social-menu {
+  position: absolute;
+  top: 40px;
+  right:230px;
+  z-index: 2;
+  margin-bottom: 50px; 
+}
+
+
+</style>
+
+<body>
+    <div class="div1">
+        <div class="logo-container">
+            <img src="wordier.png" alt="logo">
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Type to search...">
+            <div class="search-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="cancel-icon">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="search-data">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="div2">
+        <h1 id="home">Home</h1>
+        <h1 id="Offer">Offer
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <a href="#">Gadgets</a>
+                    <a href="#">Apparel</a>
+                    <a href="#">Groceries</a>
+                </div>
+            </div>
+        </h1>
+        <h1 id="news">News</h1>
+        <h1 id="Contacts">Contacts</h1>
+        <h1 id="About">About</h1>
+    </div>
+
+    <div class="div3">
+    </div>
+    <div class="div4">
+    </div>
+    <div class="social-menu">
+        <ul>
+          <li><a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" target="blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/darshanaaa__/" target="blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/feed/" target="blank"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div id="slides">
+            <div class="container">
+                <div id="slides">
+                  <img src="img/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+                  <img src="img/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
+                  <img src="img/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
+                  <img src="img/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
+                </div>
+              </div>
+      
+</body>
+</html>
+<script>
+    const searchBox = document.querySelector(".search-box");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const searchInput = document.querySelector("input");
+    const searchData = document.querySelector(".search-data");
+    searchBtn.onclick = () => {
+        searchBox.classList.add("active");
+        searchBtn.classList.add("active");
+        searchInput.classList.add("active");
+        cancelBtn.classList.add("active");
+        searchInput.focus();
+        if (searchInput.value != "") {
+            var values = searchInput.value;
+            searchData.classList.remove("active");
+            searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
+        } else {
+            searchData.textContent = "";
+        }
+    }
+    cancelBtn.onclick = () => {
+        searchBox.classList.remove("active");
+        searchBtn.classList.remove("active");
+        searchInput.classList.remove("active");
+        cancelBtn.classList.remove("active");
+        searchData.classList.toggle("active");
+        searchInput.value = "";
+    }
+     $(document).ready(function(){
+$('#slides').slidesjs({
+    width: 940,
+    height: 528,
+    play: {
+      active: true,
+      auto: true,
+      interval: 4000,
+      swap: true
+    }
+  });
+});
+</script>
+<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
+
+
+  </script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
